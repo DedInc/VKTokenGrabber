@@ -65,6 +65,7 @@ public class WebDriver {
 	}
 	
 	public static void getOperaDriver() {
+		
 		String ov = Version.getOperaVersion();
 		JSONArray tags = new JSONArray(Request.get("https://api.github.com/repos/operasoftware/operachromiumdriver/tags"));
 		for (int i = 0; i != tags.length(); i++) {

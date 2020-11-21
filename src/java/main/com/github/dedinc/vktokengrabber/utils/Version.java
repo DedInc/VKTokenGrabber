@@ -43,17 +43,13 @@ public class Version {
 	}
 	
 	public static String getOperaVersion() {
-		String[] paths = {"C:\\Users\\" + username + "\\AppData\\Local\\Programs\\Opera", "C:\\Program Files\\Opera", "C:\\Program Files (x86)\\Opera"};
-		for (int i = 0; i != paths.length; i++) {
-			if (new File(paths[i]).exists()) {
-				File[] files = new File(paths[i]).listFiles();
-				for (int k = 0; k != files.length; k++) {
-					File file = files[k];
-					String name = files[k].getName();					
-					if (name.contains(".") && file.isDirectory()) {
-						return name.split("\\.")[0];
-					}
-				}
+		String path = "C:\\Users\\" + username + "\\AppData\\Local\\Programs\\Opera";
+		File[] files = new File(path).listFiles();
+		for (int k = 0; k != files.length; k++) {
+			File file = files[k];
+			String name = files[k].getName();
+			if (name.contains(".") && file.isDirectory()) {
+				return name.split("\\.")[0];
 			}
 		}
 		return null;

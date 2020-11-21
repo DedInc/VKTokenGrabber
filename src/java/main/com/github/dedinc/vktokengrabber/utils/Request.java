@@ -1,5 +1,7 @@
 package com.github.dedinc.vktokengrabber.utils;
 
+import org.json.JSONObject;
+
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
@@ -7,11 +9,11 @@ import okhttp3.Response;
 
 public class Request {
 	
-	public static String post(String url, String json) {
+	public static String post(String url, JSONObject json) {
 		try {
 			final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 			OkHttpClient client = new OkHttpClient();
-			  RequestBody body = RequestBody.create(JSON, json);
+			  RequestBody body = RequestBody.create(JSON, json.toString());
 			  okhttp3.Request request = new okhttp3.Request.Builder()
 			      .url(url)
 			      .post(body)
