@@ -5,7 +5,6 @@ import java.util.Arrays;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
 import com.github.dedinc.vktokengrabber.utils.WebDriver;
 
 public class Chrome {

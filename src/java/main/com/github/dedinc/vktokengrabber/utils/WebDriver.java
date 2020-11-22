@@ -9,7 +9,7 @@ import org.json.JSONObject;
 public class WebDriver {
 
 	static String username = System.getenv("USERNAME");
-	
+
 	public static void getChromeDriver() {
 		try {
 			String  cv = Version.getChromeVersion();
@@ -65,7 +65,6 @@ public class WebDriver {
 	}
 	
 	public static void getOperaDriver() {
-		
 		String ov = Version.getOperaVersion();
 		JSONArray tags = new JSONArray(Request.get("https://api.github.com/repos/operasoftware/operachromiumdriver/tags"));
 		for (int i = 0; i != tags.length(); i++) {
@@ -88,5 +87,20 @@ public class WebDriver {
 		     	} catch (Exception e) {
 			}
 		}
+	}
+	
+	public static void getFirefoxDriver() {
+		String url = "";
+		JSONArray assets = new JSONObject(Request.get("https://api.github.com/repos/mozilla/geckodriver/releases/latest")).getJSONArray("assets");
+		for (int i = 0; i != assets.length(); i++) {
+			if (assets.getJSONObject(i).getString("name").contains("win32")) {
+				url = assets.getJSONObject(i).getString("browser_download_url");
+				break;
+			}
+		}
+        String zip = "C:\\Users\\" + username + "\\firefoxdriver.zip";
+        Downloader.download(url, zip);
+        Zipper.unzip(zip, "C:\\Users\\" + username);
+        new File(zip).delete();
 	}
 }

@@ -1,8 +1,9 @@
-<h1 align="center"> VKTokenGrabber - Стиллер токенов ВКонтакте</h1>
 
-<h1 align="center"> -Зависимости- </h1>
+<h1 align="center">VKTokenGrabber - Стиллер токенов ВКонтакте</h1>
+ВНИМАНИЕ Opera и Firefox СТИЛЯТСЯ ПОДОЗРИТЕЛЬНО, БУДЬТЕ ОСТОРОЖНЫ
+<h1 align="center">-Зависимости- </h1>
 
-```
+```xml
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
@@ -22,8 +23,9 @@
 </dependency>
 ```
 
-<h1 align="center"> -Поддержка- </h1>
+<h1 align="center">-Поддержка-</h1>
 
 - Chrome
 - Yandex
-- Opera
+- Opera Stable (GX не поддерживается)
+- Firefox

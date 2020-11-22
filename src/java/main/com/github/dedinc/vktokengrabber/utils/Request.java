@@ -1,14 +1,12 @@
 package com.github.dedinc.vktokengrabber.utils;
 
 import org.json.JSONObject;
-
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class Request {
-	
 	public static String post(String url, JSONObject json) {
 		try {
 			final MediaType JSON = MediaType.parse("application/json; charset=utf-8");

